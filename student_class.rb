@@ -1,8 +1,8 @@
 class Student
-  attr_accessor :name, :href, :bio, :edu, :work, :twitter, :linkedin, :facebook, :github, :rss, :treehouse, :codeschool, :coderwall, :fav1, :fav2, :fav3, :fav4, :website, :website2
+  attr_accessor :name, :href, :bio, :edu, :work, :twitter, :linkedin, :facebook, :github, :rss, :treehouse, :codeschool, :coderwall, :fav1, :fav2, :fav3, :fav4, :website, :website1, :website2, :website3, :website4
   @@all = []
 
-  def initialize   
+  def initialize
     @@all << self
   end
   
@@ -22,7 +22,7 @@ class Student
   end
 
   def self.find_by_name(name)
-    @@all.select { |student_instance| student_instance.name == name }
+    @@all.select { |student_instance| student_instance.name.downcase == name.downcase }
   end
 end
   

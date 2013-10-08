@@ -31,7 +31,7 @@ class StudentScraper
   def get_all_student_data
     @student_data.each do |student_hash|
       temp_page = "#{@main_index_url}#{student_hash[:href]}"
-
+      
       begin
         student_page = Nokogiri::HTML(open(temp_page))
         get_data_from_student_page(student_hash, student_page)
@@ -90,8 +90,4 @@ class StudentScraper
       end
     end
   end
-
 end
-
-flatiron_students = StudentScraper.new("http://students.flatironschool.com/")
-flatiron_students.call

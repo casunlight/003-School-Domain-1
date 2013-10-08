@@ -1,4 +1,5 @@
 require_relative 'spec_helper'
+require_relative '../student_class'
 
 describe "Student" do
 
